@@ -59,7 +59,7 @@ export default function Nav() {
       />
 
       <nav aria-label="Primary" className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-semibold tracking-tight" aria-label="Athenkosi Fadana — back to top">
+        <a href="#top" className="font-semibold tracking-tight" aria-label="Athenkosi Fadana, back to top">
           AF<span className="text-blue-400">.</span>
         </a>
 

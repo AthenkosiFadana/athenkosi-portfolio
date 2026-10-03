@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-16 md:grid-cols-[1.2fr_.8fr] md:pb-24">
         <div>
           <motion.p {...rise(0.05)} className="mb-5 font-mono text-xs uppercase tracking-[.3em] text-blue-400">
-            $ whoami
+            whoami
           </motion.p>
 
           <motion.div {...rise(0.12)} className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-blue-400/25 bg-blue-400/[.07] px-4 py-2 text-sm text-blue-300">

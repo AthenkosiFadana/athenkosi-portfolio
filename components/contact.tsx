@@ -24,7 +24,7 @@ export default function Contact() {
         <div className="glow relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/[.16] via-transparent to-transparent p-8 md:p-12">
           <div className="grid-bg pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
           <div className="relative">
-            <p className="font-mono text-xs uppercase tracking-[.28em] text-blue-300">07 — Contact</p>
+            <p className="font-mono text-xs uppercase tracking-[.28em] text-blue-300">07 Contact</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
               Let&apos;s build something useful.
             </h2>

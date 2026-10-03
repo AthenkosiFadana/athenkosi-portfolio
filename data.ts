@@ -48,7 +48,7 @@ export const projects: Project[] = [
     name: "EduBridge SA",
     category: "Full-stack · Education",
     description:
-      "Low-bandwidth digital skills platform for South Africa: structured courses, career pathways, quizzes, assessments and downloadable certificates — pages kept small so it stays usable on mobile data.",
+      "Low-bandwidth digital skills platform for South Africa with structured courses, career pathways, quizzes, assessments and downloadable certificates. Pages stay small so the site remains usable on mobile data.",
     tech: ["Next.js", "FastAPI", "SQLAlchemy", "REST API"],
     url: "https://github.com/AthenkosiFadana/edubridge-sa",
     demo: "https://edubridge-sa.vercel.app",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     name: "SafeWatch SA",
     category: "Serverless · Public safety",
     description:
-      "Community incident reporting with a live Leaflet crime map, local safety alerts and an analytics dashboard. Backend runs as AWS Lambda functions wired up through SAM.",
+      "Community incident reporting with a live Leaflet crime map, local safety alerts and an analytics dashboard. The backend runs as AWS Lambda functions provisioned through SAM.",
     tech: ["React", "Leaflet", "Recharts", "Flask", "AWS SAM"],
     url: "https://github.com/AthenkosiFadana/safewatch-sa",
     demo: "https://safewatch-sa.vercel.app",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     name: "SkillPath",
     category: "Web application · Careers",
     description:
-      "Free courses, a resume builder, a cover-letter generator and a job-application tracker in one Flask app — with registration, session auth, forms validation and persistent storage.",
+      "Free courses, a resume builder, a cover-letter generator and a job-application tracker, all in one Flask app with registration, session auth, form validation and persistent storage.",
     tech: ["Flask", "SQLAlchemy", "WTForms", "SQLite"],
     url: "https://github.com/AthenkosiFadana/skillpath",
     image: "/thumbs/skillpath.webp",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     name: "ATM Simulator",
     category: "Interactive · Mobile",
     description:
-      "A guided ATM tutorial for first-time users — card insertion, PIN entry, balance checks, withdrawals and transfers — packaged for Android and iOS through Capacitor.",
+      "A guided ATM tutorial for first-time users, covering card insertion, PIN entry, balance checks, withdrawals and transfers, packaged for Android and iOS through Capacitor.",
     tech: ["JavaScript", "HTML", "CSS", "Capacitor"],
     url: "https://github.com/AthenkosiFadana/atm-simulator",
     demo: "https://atm-simulator-rho.vercel.app",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     name: "DStv IR Controller",
     category: "IoT · Embedded",
     description:
-      "ESP32 firmware that drives a 38 kHz NEC infrared LED to control a DStv decoder from a phone over Wi-Fi — HTTP endpoints plus MQTT, with debounced input and a status API.",
+      "ESP32 firmware that drives a 38 kHz NEC infrared LED to control a DStv decoder from a phone over Wi-Fi, using HTTP endpoints and MQTT with debounced input and a status API.",
     tech: ["C++", "ESP32", "MQTT", "PlatformIO"],
     url: "https://github.com/AthenkosiFadana/dstv-ir-controller",
     image: "/thumbs/dstv.webp",
@@ -135,7 +135,7 @@ export const experience = [
     org: "University of Fort Hare",
     period: "3 years",
     description:
-      "Ran tutorials and practical sessions across the CS curriculum, marked work and coached students through exams — from first-year programming to data structures.",
+      "Ran tutorials and practical sessions across the CS curriculum, marked work and coached students through exams, from first-year programming to data structures.",
   },
   {
     role: "Mathematics Tutor",
@@ -158,13 +158,13 @@ export const education = [
     title: "BSc Computer Science & Biochemistry",
     org: "University of Fort Hare",
     period: "Graduate",
-    detail: "Combined computing with laboratory science — algorithms, data structures and structured problem solving.",
+    detail: "Combined computing with laboratory science, covering algorithms, data structures and structured problem solving.",
   },
   {
     title: "AWS re/Start",
     org: "AWS / STS Africa",
     period: "2026",
-    detail: "Cloud fundamentals — IAM, compute, storage and networking — applied across four socio-economic project builds.",
+    detail: "Covers cloud fundamentals such as IAM, compute, storage and networking, applied across four socio-economic project builds.",
   },
   {
     title: "FNB App Academy",

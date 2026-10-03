@@ -19,8 +19,8 @@ export default function Home() {
             <p className="text-lg leading-8 text-gray-400">
               I am a Computer Science and Biochemistry graduate who enjoys turning ideas into working systems.
               My experience spans software projects, technical support, tutoring and applied technology learning
-              through AWS re/Start. I am particularly interested in building useful digital products while growing
-              deeper into cloud and cybersecurity.
+              through AWS re/Start. I am interested in building useful digital products while deepening my skills
+              in cloud and cybersecurity.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -193,7 +193,7 @@ function SectionTitle({ index, label, title }: { index: string; label: string; t
   return (
     <Reveal className="mb-12">
       <p className="font-mono text-xs uppercase tracking-[.28em] text-blue-400">
-        {index} — {label}
+        {index} {label}
       </p>
       <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
       <span className="mt-5 block h-px w-16 bg-gradient-to-r from-blue-400 to-transparent" aria-hidden="true" />

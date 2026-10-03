@@ -16,7 +16,7 @@ const mono = JetBrains_Mono({
 });
 
 const description =
-  "Portfolio of Athenkosi Fadana — Computer Science graduate. Software development, IT support, cloud and cybersecurity projects built with Next.js, FastAPI, Flask and AWS.";
+  "Portfolio of Athenkosi Fadana, a Computer Science graduate. Software development, IT support, cloud and cybersecurity projects built with Next.js, FastAPI, Flask and AWS.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(PROFILE.site),
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_ZA",
     url: PROFILE.site,
-    siteName: `${PROFILE.name} — Portfolio`,
+    siteName: PROFILE.name,
     title: `${PROFILE.name} | Computer Science Graduate`,
     description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${PROFILE.name} — portfolio` }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${PROFILE.name} portfolio` }],
   },
   twitter: {
     card: "summary_large_image",
