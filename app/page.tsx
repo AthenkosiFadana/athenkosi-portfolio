@@ -1,135 +1,202 @@
-import Image from "next/image";
-import { ArrowUpRight, Download, Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
-import { projects, skills, experience, education } from "../data";
+import { Download, ExternalLink, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import Hero from "../components/hero";
+import Nav from "../components/nav";
+import Projects from "../components/projects";
+import { Reveal, RevealGroup, RevealItem } from "../components/reveal";
+import Contact from "../components/contact";
+import { PROFILE, certificates, education, experience, skills } from "../data";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#07090d]">
-      <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#07090d]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="font-semibold tracking-tight">AF<span className="text-blue-400">.</span></a>
-          <div className="hidden gap-7 text-sm text-gray-400 md:flex">
-            <a href="#about" className="hover:text-white">About</a>
-            <a href="#skills" className="hover:text-white">Skills</a>
-            <a href="#projects" className="hover:text-white">Projects</a>
-            <a href="#experience" className="hover:text-white">Experience</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
-          </div>
-          <a href="https://www.linkedin.com/in/athenkosi-fadana-41a013235/" target="_blank" className="rounded-full border border-white/10 px-4 py-2 text-sm hover:bg-white/5">Let's connect</a>
-        </div>
-      </nav>
+      <Nav />
+      <Hero />
 
-      <section className="grid-bg relative overflow-hidden pt-32">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-24 pt-10 md:grid-cols-[1.25fr_.75fr] md:pb-32">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/5 px-4 py-2 text-sm text-blue-300">
-              <span className="h-2 w-2 rounded-full bg-blue-400" /> Open to technology opportunities
-            </div>
-            <p className="mb-4 text-sm uppercase tracking-[.28em] text-gray-500">Athenkosi Fadana</p>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
-              I build technology that solves <span className="text-blue-400">real problems.</span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-400">
-              Computer Science & Biochemistry graduate focused on software development, IT support, cloud technologies and cybersecurity.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#projects" className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-medium text-black hover:bg-gray-200">View my work <ArrowUpRight size={17}/></a>
-              <a href="/Athenkosi-Fadana-CV.pdf" download className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-medium hover:bg-white/5"><Download size={17}/> Download CV</a>
-            </div>
-            <div className="mt-8 flex items-center gap-5 text-gray-500">
-              <a href="https://github.com/AthenkosiFadana" target="_blank" aria-label="GitHub" className="hover:text-white"><Github/></a>
-              <a href="https://www.linkedin.com/in/athenkosi-fadana-41a013235/" target="_blank" aria-label="LinkedIn" className="hover:text-white"><Linkedin/></a>
-              <a href="mailto:athenkosifadana@gmail.com" aria-label="Email" className="hover:text-white"><Mail/></a>
-            </div>
-          </div>
-          <div className="mx-auto w-full max-w-sm">
-            <div className="glow relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent"/>
-              <Image src="/profile.jpeg" alt="Athenkosi Fadana" width={412} height={1282} className="relative h-[520px] w-full rounded-[1.6rem] object-cover object-top grayscale-[15%]" priority />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="mx-auto max-w-6xl px-6 py-24">
-        <SectionTitle eyebrow="01 — About" title="A practical technologist with a problem-solving mindset." />
+      <section id="about" className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <SectionTitle index="01" label="About" title="A practical technologist with a problem-solving mindset." />
         <div className="grid gap-8 md:grid-cols-[1.3fr_.7fr]">
-          <p className="text-lg leading-8 text-gray-400">
-            I am a Computer Science and Biochemistry graduate who enjoys turning ideas into working systems. My experience spans software projects, technical support, tutoring and applied technology learning through AWS re/Start. I am particularly interested in building useful digital products while growing deeper into cloud and cybersecurity.
-          </p>
-          <div className="card rounded-2xl p-6">
-            <p className="text-sm text-gray-500">Based in</p>
-            <p className="mt-2 flex items-center gap-2 font-medium"><MapPin size={17} className="text-blue-400"/> South Africa</p>
-            <p className="mt-6 text-sm text-gray-500">Focus areas</p>
-            <p className="mt-2 leading-7 text-gray-300">Software · IT Support · Cloud · Cybersecurity</p>
-          </div>
+          <Reveal>
+            <p className="text-lg leading-8 text-gray-400">
+              I am a Computer Science and Biochemistry graduate who enjoys turning ideas into working systems.
+              My experience spans software projects, technical support, tutoring and applied technology learning
+              through AWS re/Start. I am particularly interested in building useful digital products while growing
+              deeper into cloud and cybersecurity.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="card h-full rounded-2xl p-6">
+              <p className="font-mono text-xs uppercase tracking-[.18em] text-gray-500">Based in</p>
+              <p className="mt-2 flex items-center gap-2 font-medium">
+                <MapPin size={17} className="text-blue-400" /> {PROFILE.location}
+              </p>
+              <p className="mt-6 font-mono text-xs uppercase tracking-[.18em] text-gray-500">Focus areas</p>
+              <p className="mt-2 leading-7 text-gray-300">Software · IT Support · Cloud · Cybersecurity</p>
+              <p className="mt-6 font-mono text-xs uppercase tracking-[.18em] text-gray-500">Currently</p>
+              <p className="mt-2 leading-7 text-gray-300">AWS re/Start 2026 · open to roles</p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       <section id="skills" className="border-y border-white/5 bg-white/[.015]">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionTitle eyebrow="02 — Skills" title="Tools I use to turn ideas into solutions." />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {skills.map((s) => <div key={s.title} className="card rounded-2xl p-6"><s.icon className="mb-5 text-blue-400"/><h3 className="font-medium">{s.title}</h3><p className="mt-3 text-sm leading-6 text-gray-500">{s.items}</p></div>)}
-          </div>
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+          <SectionTitle index="02" label="Skills" title="Tools I use to turn ideas into solutions." />
+          <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
+            {skills.map(s => (
+              <RevealItem key={s.title}>
+                <div className="card h-full rounded-2xl p-6 transition-colors duration-300 hover:border-blue-400/25">
+                  <s.icon className="mb-5 text-blue-400" aria-hidden="true" />
+                  <h3 className="font-medium">{s.title}</h3>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {s.items.map(i => (
+                      <li
+                        key={i}
+                        className="rounded-full border border-white/[.07] bg-white/5 px-2.5 py-1 text-xs text-gray-400"
+                      >
+                        {i}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
-        <SectionTitle eyebrow="03 — Selected work" title="Projects that show how I learn and build." />
-        <div className="grid gap-5 md:grid-cols-2">
-          {projects.map((p) => (
-            <article key={p.name} className="card group rounded-2xl p-6 transition hover:-translate-y-1 hover:border-blue-400/20">
-              <div className="flex items-start justify-between gap-4">
-                <div><p className="text-xs uppercase tracking-[.2em] text-blue-400">{p.category}</p><h3 className="mt-3 text-xl font-semibold">{p.name}</h3></div>
-                <a href={p.url} target="_blank" className="rounded-full border border-white/10 p-2 text-gray-400 hover:text-white"><ExternalLink size={16}/></a>
-              </div>
-              <p className="mt-4 leading-7 text-gray-400">{p.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">{p.tech.map(t => <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-gray-400">{t}</span>)}</div>
-            </article>
-          ))}
-        </div>
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <SectionTitle index="03" label="Selected work" title="Projects that show how I learn and build." />
+        <Projects />
       </section>
 
       <section id="experience" className="border-y border-white/5 bg-white/[.015]">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionTitle eyebrow="04 — Experience" title="Experience beyond the code." />
-          <div className="space-y-5">
-            {experience.map(e => <div key={e.role} className="card rounded-2xl p-6 md:flex md:items-start md:justify-between md:gap-10"><div><h3 className="font-semibold">{e.role}</h3><p className="mt-1 text-blue-300">{e.org}</p><p className="mt-4 max-w-3xl leading-7 text-gray-400">{e.description}</p></div><p className="mt-4 whitespace-nowrap text-sm text-gray-500 md:mt-0">{e.period}</p></div>)}
-          </div>
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+          <SectionTitle index="04" label="Experience" title="Experience beyond the code." />
+          <RevealGroup className="space-y-5" stagger={0.08}>
+            {experience.map(e => (
+              <RevealItem key={e.role}>
+                <article className="card rounded-2xl p-6 transition-colors duration-300 hover:border-blue-400/25 md:flex md:items-start md:justify-between md:gap-10">
+                  <div>
+                    <h3 className="font-semibold">{e.role}</h3>
+                    <p className="mt-1 text-blue-300">{e.org}</p>
+                    <p className="mt-4 max-w-3xl leading-7 text-gray-400">{e.description}</p>
+                  </div>
+                  <p className="mt-4 whitespace-nowrap font-mono text-xs uppercase tracking-[.14em] text-gray-500 md:mt-1">
+                    {e.period}
+                  </p>
+                </article>
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <SectionTitle eyebrow="05 — Education" title="Academic foundation." />
-        <div className="grid gap-5 md:grid-cols-2">
-          {education.map(e => <div key={e.title} className="card rounded-2xl p-6"><p className="text-sm text-blue-300">{e.period}</p><h3 className="mt-3 text-lg font-semibold">{e.title}</h3><p className="mt-2 text-gray-400">{e.org}</p><p className="mt-4 text-sm leading-6 text-gray-500">{e.detail}</p></div>)}
+      <section id="education" className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <SectionTitle index="05" label="Education" title="Academic and professional training." />
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
+          {education.map(e => (
+            <RevealItem key={e.title}>
+              <article className="card flex h-full flex-col rounded-2xl p-6 transition-colors duration-300 hover:border-blue-400/25">
+                <p className="font-mono text-xs uppercase tracking-[.18em] text-blue-300">{e.period}</p>
+                <h3 className="mt-3 text-lg font-semibold leading-7">{e.title}</h3>
+                <p className="mt-2 text-gray-400">{e.org}</p>
+                <p className="mt-4 text-sm leading-6 text-gray-500">{e.detail}</p>
+                {e.url && (
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm text-blue-300 transition hover:text-blue-200"
+                  >
+                    Programme site
+                    <ExternalLink size={14} aria-hidden="true" />
+                  </a>
+                )}
+              </article>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </section>
+
+      <section id="certificates" className="border-y border-white/5 bg-white/[.015]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+          <SectionTitle
+            index="06"
+            label="Certificates"
+            title="Continuous learning, verified."
+          />
+          <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
+            {certificates.map(c => (
+              <RevealItem key={c.file}>
+                <a
+                  href={`/certificates/${encodeURI(c.file)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card group flex h-full flex-col rounded-2xl p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="font-mono text-[11px] uppercase tracking-[.16em] text-blue-300">
+                      {c.issuer}
+                    </span>
+                    <ExternalLink
+                      size={15}
+                      aria-hidden="true"
+                      className="shrink-0 text-gray-600 transition group-hover:text-blue-400"
+                    />
+                  </div>
+                  <h3 className="mt-3 flex-1 text-[15px] font-medium leading-6">{c.title}</h3>
+                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/[.06] pt-3">
+                    <span className="font-mono text-xs text-gray-500">{c.issued}</span>
+                    {c.note && (
+                      <span className="truncate text-xs text-gray-500 transition group-hover:text-gray-400">
+                        {c.note}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 
-      <section id="contact" className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="glow rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/10 to-transparent p-8 md:p-12">
-          <p className="text-sm uppercase tracking-[.25em] text-blue-300">06 — Contact</p>
-          <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">Let's build something useful.</h2>
-          <p className="mt-5 max-w-xl leading-7 text-gray-400">For graduate opportunities, IT support roles, software projects or technology collaborations, feel free to reach out.</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="mailto:athenkosifadana@gmail.com" className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-medium text-black"><Mail size={17}/> Email me</a>
-            <a href="https://www.linkedin.com/in/athenkosi-fadana-41a013235/" target="_blank" className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-medium"><Linkedin size={17}/> LinkedIn</a>
-            <a href="https://github.com/AthenkosiFadana" target="_blank" className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-medium"><Github size={17}/> GitHub</a>
-          </div>
-        </div>
-      </section>
+      <Contact />
 
       <footer className="border-t border-white/5">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Athenkosi Fadana. Built with Next.js.</p>
-          <p>Software · Cloud · Cybersecurity</p>
+          <p>© {new Date().getFullYear()} {PROFILE.name}. Built with Next.js.</p>
+          <div className="flex items-center gap-5">
+            <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transition hover:text-white">
+              <Github size={16} />
+            </a>
+            <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition hover:text-white">
+              <Linkedin size={16} />
+            </a>
+            <a href={`mailto:${PROFILE.email}`} aria-label="Email" className="transition hover:text-white">
+              <Mail size={16} />
+            </a>
+            <a
+              href="/Athenkosi-Fadana-CV.pdf"
+              download
+              className="inline-flex items-center gap-1.5 transition hover:text-white"
+            >
+              CV <Download size={14} />
+            </a>
+          </div>
         </div>
       </footer>
     </main>
   );
 }
 
-function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
-  return <div className="mb-12"><p className="text-xs uppercase tracking-[.25em] text-blue-400">{eyebrow}</p><h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2></div>;
+function SectionTitle({ index, label, title }: { index: string; label: string; title: string }) {
+  return (
+    <Reveal className="mb-12">
+      <p className="font-mono text-xs uppercase tracking-[.28em] text-blue-400">
+        {index} — {label}
+      </p>
+      <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
+      <span className="mt-5 block h-px w-16 bg-gradient-to-r from-blue-400 to-transparent" aria-hidden="true" />
+    </Reveal>
+  );
 }
